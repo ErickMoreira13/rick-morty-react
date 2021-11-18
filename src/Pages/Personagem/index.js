@@ -14,13 +14,13 @@ function Personagem(){
             let response = await api.getPeronagemById(id);
             setData(response);
 
-            let data_criacao = new Date(data.created);
+            let data_criacao = new Date(response.created);
             data_criacao = data_criacao.toLocaleDateString("pt-Br");
 
             setDateCreated(data_criacao);
         }
         load();
-    }, [id, data.created]);
+    }, [id]);
 
     return(
         <div className="personagem-container">
